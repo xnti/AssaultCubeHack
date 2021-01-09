@@ -24,17 +24,18 @@ namespace Hack {
 		//uintptr_t moduleBase = (uintptr_t)GetModuleHandle(L"ac_client.exe");
 		//calling it with NULL also gives you the address of the .exe module
 		// Init Data.
-		float fMatrix[16];
-		bool bHealth = false, bAmmo = false, bRecoil = false, bFastFire = false, bSpectator = false, bAkimbo = false, bbHop = false, bEsp = false;
+		
+		bool bHealth = false, bAmmo = false, bRecoil = false, bFastFire = false, bSpectator = false, bAkimbo = false, bbHop = false;
+		pData()->bEsp = false;
 		// Init Ptrs.
-		EntList* entList = *(EntList**)0x50F4F8;
-		uintptr_t* matrix = (uintptr_t*)0x501AE8;
+		pData()->entList = *(EntList**)0x50F4F8;
+		pData()->viewMatrix = (uintptr_t*)0x501AE8;
 		pData()->moduleBase = (uintptr_t)GetModuleHandle(NULL);
 		pData()->localPlayer = *(playerEnt**)0x50F4F4;
 		pData()->localPlayerPtr = (uintptr_t*)(pData()->moduleBase + 0x10F4F4);
 		pData()->numOfPlayers = (int*)(0x50F500);
 
-		pFunctions()->statusConsole(bHealth, bAmmo, bRecoil, bFastFire, bSpectator, bAkimbo, bbHop, bEsp);
+		pFunctions()->statusConsole(bHealth, bAmmo, bRecoil, bFastFire, bSpectator, bAkimbo, bbHop, pData()->bEsp);
 		while (true)
 		{
 			if (GetAsyncKeyState(VK_END) & 1)
@@ -42,49 +43,49 @@ namespace Hack {
 			if (GetAsyncKeyState(VK_F1) & 1)
 			{
 				bHealth = !bHealth;
-				pFunctions()->statusConsole(bHealth, bAmmo, bRecoil, bFastFire, bSpectator, bAkimbo, bbHop, bEsp);
+				pFunctions()->statusConsole(bHealth, bAmmo, bRecoil, bFastFire, bSpectator, bAkimbo, bbHop, pData()->bEsp);
 			}
 
 			if (GetAsyncKeyState(VK_F2) & 1)
 			{
 				bAmmo = !bAmmo;
-				pFunctions()->statusConsole(bHealth, bAmmo, bRecoil, bFastFire, bSpectator, bAkimbo, bbHop, bEsp);
+				pFunctions()->statusConsole(bHealth, bAmmo, bRecoil, bFastFire, bSpectator, bAkimbo, bbHop, pData()->bEsp);
 			}
 
 			if (GetAsyncKeyState(VK_F3) & 1)
 			{
 				bRecoil = !bRecoil;
-				pFunctions()->statusConsole(bHealth, bAmmo, bRecoil, bFastFire, bSpectator, bAkimbo, bbHop, bEsp);
+				pFunctions()->statusConsole(bHealth, bAmmo, bRecoil, bFastFire, bSpectator, bAkimbo, bbHop, pData()->bEsp);
 			}
 
 			if (GetAsyncKeyState(VK_F4) & 1)
 			{
 				bFastFire = !bFastFire;
-				pFunctions()->statusConsole(bHealth, bAmmo, bRecoil, bFastFire, bSpectator, bAkimbo, bbHop, bEsp);
+				pFunctions()->statusConsole(bHealth, bAmmo, bRecoil, bFastFire, bSpectator, bAkimbo, bbHop, pData()->bEsp);
 			}
 
 			if (GetAsyncKeyState(VK_F5) & 1)
 			{
 				bSpectator = !bSpectator;
-				pFunctions()->statusConsole(bHealth, bAmmo, bRecoil, bFastFire, bSpectator, bAkimbo, bbHop, bEsp);
+				pFunctions()->statusConsole(bHealth, bAmmo, bRecoil, bFastFire, bSpectator, bAkimbo, bbHop, pData()->bEsp);
 			}
 
 			if (GetAsyncKeyState(VK_F6) & 1)
 			{
 				bAkimbo = !bAkimbo;
-				pFunctions()->statusConsole(bHealth, bAmmo, bRecoil, bFastFire, bSpectator, bAkimbo, bbHop, bEsp);
+				pFunctions()->statusConsole(bHealth, bAmmo, bRecoil, bFastFire, bSpectator, bAkimbo, bbHop, pData()->bEsp);
 			}
 
 			if (GetAsyncKeyState(VK_F7) & 1)
 			{
 				bbHop = !bbHop;
-				pFunctions()->statusConsole(bHealth, bAmmo, bRecoil, bFastFire, bSpectator, bAkimbo, bbHop, bEsp);
+				pFunctions()->statusConsole(bHealth, bAmmo, bRecoil, bFastFire, bSpectator, bAkimbo, bbHop, pData()->bEsp);
 			}
 
 			if (GetAsyncKeyState(VK_F8) & 1)
 			{
-				bEsp = !bEsp;
-				pFunctions()->statusConsole(bHealth, bAmmo, bRecoil, bFastFire, bSpectator, bAkimbo, bbHop, bEsp);
+				pData()->bEsp = !pData()->bEsp;
+				pFunctions()->statusConsole(bHealth, bAmmo, bRecoil, bFastFire, bSpectator, bAkimbo, bbHop, pData()->bEsp);
 			}
 
 			//continuous writes / freeze
@@ -164,10 +165,10 @@ namespace Hack {
 				{
 					pData()->localPlayer->bHop = 256;
 				}
-				if (bEsp)
-				{
-					CreateThread(0, 0, (LPTHREAD_START_ROUTINE)Render::DrawEsp, (matrix, fMatrix, entList), 0, 0);
-				}
+				//if (pData()->bEsp)
+				//{
+				//	//CreateThread(0, 0, (LPTHREAD_START_ROUTINE)Render::DrawEsp, (matrix, fMatrix, entList), 0, 0);
+				//}
 
 			}
 			else {

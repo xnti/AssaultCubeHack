@@ -1,0 +1,23 @@
+﻿  pch.cpp
+  dllmain.cpp
+  Hack.cpp
+  VEHHook.cpp
+D:\.main()\.Projects\.C++\AssaultCube Hack\VEHHook.cpp(11,40): warning C4311: 'type cast': pointer truncation from 'void *' to 'DWORD'
+D:\.main()\.Projects\.C++\AssaultCube Hack\VEHHook.cpp(11,40): warning C4302: 'type cast': truncation from 'void *' to 'DWORD'
+D:\.main()\.Projects\.C++\AssaultCube Hack\VEHHook.cpp(23,7): error C2039: 'Eip': is not a member of '_CONTEXT'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winnt.h(3901): message : see declaration of '_CONTEXT'
+D:\.main()\.Projects\.C++\AssaultCube Hack\VEHHook.cpp(25,78): error C2039: 'Eip': is not a member of '_CONTEXT'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winnt.h(3901): message : see declaration of '_CONTEXT'
+D:\.main()\.Projects\.C++\AssaultCube Hack\VEHHook.cpp(26,40): error C2039: 'Eip': is not a member of '_CONTEXT'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\winnt.h(3901): message : see declaration of '_CONTEXT'
+D:\.main()\.Projects\.C++\AssaultCube Hack\VEHHook.cpp(26,69): warning C4311: 'type cast': pointer truncation from 'void *' to 'DWORD'
+D:\.main()\.Projects\.C++\AssaultCube Hack\VEHHook.cpp(26,69): warning C4302: 'type cast': truncation from 'void *' to 'DWORD'
+D:\.main()\.Projects\.C++\AssaultCube Hack\VEHHook.cpp(34,46): warning C4312: 'type cast': conversion from 'DWORD' to 'void *' of greater size
+  Injector.cpp
+D:\.main()\.Projects\.C++\AssaultCube Hack\Injector.cpp(5,1): warning C4273: 'Injector::GetProcId': inconsistent dll linkage
+D:\.main()\.Projects\.C++\AssaultCube Hack\Injector.h(11,18): message : see previous definition of 'GetProcId'
+D:\.main()\.Projects\.C++\AssaultCube Hack\Injector.cpp(30,1): warning C4273: 'Injector::InjectorMain': inconsistent dll linkage
+D:\.main()\.Projects\.C++\AssaultCube Hack\Injector.h(12,16): message : see previous definition of 'InjectorMain'
+  Render.cpp
+D:\.main()\.Projects\.C++\AssaultCube Hack\Render.cpp(68,49): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\.main()\.Projects\.C++\AssaultCube Hack\Render.cpp(95,7): warning C4101: 'vHead': unreferenced local variable

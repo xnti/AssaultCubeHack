@@ -1,0 +1,15 @@
+﻿  pch.cpp
+  dllmain.cpp
+  Hack.cpp
+  VEHHook.cpp
+  Injector.cpp
+D:\.main()\.Projects\.C++\AssaultCube Hack\Injector.cpp(5,1): warning C4273: 'Injector::GetProcId': inconsistent dll linkage
+D:\.main()\.Projects\.C++\AssaultCube Hack\Injector.h(11,18): message : see previous definition of 'GetProcId'
+D:\.main()\.Projects\.C++\AssaultCube Hack\Injector.cpp(30,1): warning C4273: 'Injector::InjectorMain': inconsistent dll linkage
+D:\.main()\.Projects\.C++\AssaultCube Hack\Injector.h(12,16): message : see previous definition of 'InjectorMain'
+  Render.cpp
+D:\.main()\.Projects\.C++\AssaultCube Hack\Render.cpp(95,7): warning C4101: 'vHead': unreferenced local variable
+  Generating Code...
+D:\.main()\.Projects\.C++\AssaultCube Hack\VEHHook.cpp(17): warning C4715: 'Hack::VEHHook::Init': not all control paths return a value
+     Creating library D:\.main()\.Projects\.C++\AssaultCube Hack\Debug\AssaultCube Hack.lib and object D:\.main()\.Projects\.C++\AssaultCube Hack\Debug\AssaultCube Hack.exp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(861,5): error MSB6006: "link.exe" exited with code 1.

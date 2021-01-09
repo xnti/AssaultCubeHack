@@ -13,8 +13,12 @@ namespace Hack
 	struct Data {
 		uintptr_t moduleBase;
 		uintptr_t* localPlayerPtr;
-		int* numOfPlayers;
+		uintptr_t* viewMatrix;
 		playerEnt* localPlayer;
+		EntList* entList;
+		bool bEsp;
+		int* numOfPlayers;
+		float fMatrix[16];
 	};
 
 	/* class External {
