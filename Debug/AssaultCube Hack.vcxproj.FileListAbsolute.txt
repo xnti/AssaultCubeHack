@@ -1,2 +1,0 @@
-D:\.main()\.Projects\.C++\AssaultCube Hack\Debug\AssaultCube Hack.dll
-D:\.main()\.Projects\.C++\AssaultCube Hack\Debug\AssaultCube Hack.pdb

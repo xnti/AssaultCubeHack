@@ -42,12 +42,6 @@
     <ClInclude Include="Offsets.h">
       <Filter>Cheat</Filter>
     </ClInclude>
-    <ClInclude Include="Injector.h">
-      <Filter>Injector</Filter>
-    </ClInclude>
-    <ClInclude Include="VEHHook.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -61,12 +55,6 @@
     </ClCompile>
     <ClCompile Include="Render.cpp">
       <Filter>Cheat</Filter>
-    </ClCompile>
-    <ClCompile Include="Injector.cpp">
-      <Filter>Injector</Filter>
-    </ClCompile>
-    <ClCompile Include="VEHHook.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
